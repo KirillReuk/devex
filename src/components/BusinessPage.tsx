@@ -1,23 +1,23 @@
 import React from 'react';
 import api from '../api.json';
 
-function BusinessPage() {
+function BusinessPage(props) {
   return (
     <>
-      <img className='photo' src={api[0].image} alt={api[0].name} height={300} />
+      <img className='photo' src={props.info.image} alt={props.info.name} height={300} />
       <br />
       <div style={{ display: "inline-block" }}>
         <div style={{ paddingLeft: "100px" }}>
           Address
           <br />
-          {api[0].address.zip + " " + api[0].address.street}
+          {props.info.address.zip + " " + props.info.address.street}
           <br />
-          {api[0].address.country + ", " + api[0].address.number}
+          {props.info.address.country + ", " + props.info.address.number}
         </div>
         <div style={{ paddingLeft: "auto", paddingRight: "auto" }}>
           Nearby Places
           <table>
-            {api.filter(x => x.address.country === api[0].address.country).map(x =>
+            {api.filter(x => x.address.country === props.info.address.country).map(x =>
               <tr>
                 <td>
                   {x.description}
@@ -29,7 +29,7 @@ function BusinessPage() {
         <div style={{ paddingRight: "100px" }}>
           Contact
           <br />
-          {api[0].phone + ", " + api[0].email}
+          {props.info.phone + ", " + props.info.email}
         </div>
       </div>
     </>

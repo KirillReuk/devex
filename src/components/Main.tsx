@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import api from '../api.json';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './Homepage';
 import BusinessPage from './BusinessPage';
 
-class Main extends Component<{}, { api: Object }> {
+class Main extends Component<{}, { api: Array<any> }> {
   constructor(props) {
     super(props)
     this.state = {
@@ -20,7 +20,11 @@ class Main extends Component<{}, { api: Object }> {
           <Route path='/' element={
             <Homepage api={this.state.api} />}
           />
-          <Route path='/BusinessPage' element={<BusinessPage />} />
+          {this.state.api.map(x =>
+            <Route path={'/' + x.id} element={
+              <BusinessPage info={x} />}
+            />
+          )}
         </Routes>
       </BrowserRouter>
     )
