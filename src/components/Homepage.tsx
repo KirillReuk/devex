@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import api from '../api.json';
+import { Link } from 'react-router-dom';
 
-function Homepage() {
+function Homepage(props) {
   return (
     <div >
       <table>
@@ -9,10 +9,18 @@ function Homepage() {
           <th>NAME</th>
           <th>DESCRIPTION</th>
         </tr>
-        {api.map(x =>
+        {props.api.map(x =>
           <tr>
-            <td>{x.name}</td>
-            <td>{x.description}</td>
+            <td>
+              <Link to={"/" + x.id}>
+                {x.name}
+              </Link>
+            </td>
+            <td>
+              <Link to={"/" + x.id}>
+                {x.description}
+              </Link>
+            </td>
           </tr>
         )}
       </table>
