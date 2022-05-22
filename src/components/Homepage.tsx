@@ -1,30 +1,79 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const TableDiv = styled.div`
+  margin: 50px 300px auto;
+`
+const Table = styled.div`
+  text-align: left;
+  font-size: 14px;
+`
+const Cell = styled.td`
+  border: 2px solid #EEEEEE;
+  border-left: none;
+  border-right: none;
+  border-collapse: true;
+`
+const LeftCell = styled(Cell)`
+  width: 125px;
+  padding: 10px 25px 10px 25px;
+  color: #f4511e;
+  vertical-align: center;
+  font-weight: 600;
+  vertical-align: middle;
+`
+const RightCell = styled(Cell)`
+  width: 800px;
+  padding: 10px 25px 10px 0px;
+  font-weight: 500;
+`
+const Header = styled.th`
+  border: 2px solid #EEEEEE;
+  border-left: none;
+  border-right: none;
+  border-collapse: true;
+`
+const LeftHeader = styled(Header)`
+  width: 125px;
+  padding: 10px 25px 10px 25px;
+  color: #f4511e;
+`
+const RightHeader = styled(Header)`
+  width: 800px;
+  padding: 10px 25px 10px 0px;
+  color: #f4511e;
+`
+const TableRow = styled.tr`
+  background-color: white;
+`
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
 
 function Homepage(props) {
   return (
-    <div >
-      <table>
-        <tr>
-          <th>NAME</th>
-          <th>DESCRIPTION</th>
-        </tr>
+    <TableDiv>
+      <Table>
+        <TableRow>
+          <LeftHeader>NAME</LeftHeader>
+          <RightHeader>DESCRIPTION</RightHeader>
+        </TableRow>
         {props.api.map(x =>
-          <tr>
-            <td>
-              <Link to={"/" + x.id}>
+          <StyledLink to={"/" + x.id}>
+            <TableRow>
+              <LeftCell>
                 {x.name}
-              </Link>
-            </td>
-            <td>
-              <Link to={"/" + x.id}>
+              </LeftCell>
+              <RightCell>
                 {x.description}
-              </Link>
-            </td>
-          </tr>
+              </RightCell>
+            </TableRow>
+          </StyledLink>
         )}
-      </table>
-    </div>
+      </Table>
+    </TableDiv>
   )
 }
 

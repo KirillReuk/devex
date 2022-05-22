@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Header = styled.header`
   width: 100%;
+  background-color: white;
 `
 
 const TopBarContainer = styled.div`
@@ -18,7 +20,9 @@ function TopBar() {
   return (
     <Header>
       <TopBarContainer>
-        <img src={require('../logo.svg').default} />
+        <Link to="/">
+          <img src={require('../logo.svg').default} />
+        </Link>
       </TopBarContainer>
     </Header>
   );
