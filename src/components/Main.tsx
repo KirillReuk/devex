@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../api.json';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TopBar from './TopBar';
 import Homepage from './Homepage';
 import BusinessPage from './BusinessPage';
 
@@ -15,7 +16,7 @@ class Main extends Component<{}, { api: Array<any> }> {
   render() {
     return (
       <BrowserRouter>
-        {/* <Topbar /> */}
+        <TopBar />
         <Routes>
           <Route path='/' element={
             <Homepage api={this.state.api} />}
