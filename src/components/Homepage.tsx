@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import api from '../api.json';
 
-function Main() {
+function Homepage() {
   return (
-    <div className="App" >
+    <div >
       <table>
         <tr>
           <th>NAME</th>
@@ -17,7 +17,7 @@ function Main() {
         )}
       </table>
     </div>
-  );
+  )
 }
 
-export default Main;
+export default Homepage;
