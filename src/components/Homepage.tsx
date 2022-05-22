@@ -3,20 +3,21 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const TableDiv = styled.div`
-  margin: 50px 300px auto;
+  margin: 50px auto auto;
+  width: 60%; 
 `
 const Table = styled.div`
   text-align: left;
   font-size: 14px;
 `
 const Cell = styled.td`
-  border: 2px solid #EEEEEE;
+  border: 3px solid #EEEEEE;
   border-left: none;
   border-right: none;
   border-collapse: true;
 `
 const LeftCell = styled(Cell)`
-  width: 125px;
+  width: 80px;
   padding: 10px 25px 10px 25px;
   color: #f4511e;
   vertical-align: center;
@@ -29,19 +30,20 @@ const RightCell = styled(Cell)`
   font-weight: 500;
 `
 const Header = styled.th`
-  border: 2px solid #EEEEEE;
+  border: 3px solid #EEEEEE;
   border-left: none;
   border-right: none;
   border-collapse: true;
+  cursor: default;
 `
 const LeftHeader = styled(Header)`
-  width: 125px;
-  padding: 10px 25px 10px 25px;
+  width: 80px;
+  padding: 15px 25px 15px 25px;
   color: #f4511e;
 `
 const RightHeader = styled(Header)`
   width: 800px;
-  padding: 10px 25px 10px 0px;
+  padding: 15px 25px 15px 0px;
   color: #f4511e;
 `
 const TableRow = styled.tr`

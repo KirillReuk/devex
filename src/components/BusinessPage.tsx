@@ -1,5 +1,4 @@
 import React from 'react';
-import api from '../api.json';
 
 function BusinessPage(props) {
   return (
@@ -17,7 +16,7 @@ function BusinessPage(props) {
         <div style={{ paddingLeft: "auto", paddingRight: "auto" }}>
           Nearby Places
           <table>
-            {api.filter(x => x.address.country === props.info.address.country).map(x =>
+            {props.nearbyPlaces.map(x =>
               <tr>
                 <td>
                   {x.description}
