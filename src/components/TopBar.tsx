@@ -13,7 +13,6 @@ const TopBarContainer = styled.div`
   align-items:center;
   width:100%;
   height:90px;
-  margin-bottom: 5px;
 `
 
 function TopBar() {
