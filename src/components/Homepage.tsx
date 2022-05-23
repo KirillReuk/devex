@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const TableDiv = styled.div`
+const TableContainer = styled.div`
   margin: 50px auto auto;
-  width: 60%; 
+  width: 60%;
 `
 const Table = styled.div`
   text-align: left;
@@ -14,37 +14,33 @@ const Cell = styled.td`
   border: 3px solid #EEEEEE;
   border-left: none;
   border-right: none;
-  border-collapse: true;
+  padding: 10px 25px 10px 25px;
 `
 const LeftCell = styled(Cell)`
   width: 80px;
-  padding: 10px 25px 10px 25px;
   color: #f4511e;
-  vertical-align: center;
   font-weight: 600;
   vertical-align: middle;
 `
 const RightCell = styled(Cell)`
   width: 800px;
-  padding: 10px 25px 10px 0px;
+  padding-left: 0;
   font-weight: 500;
 `
 const Header = styled.th`
   border: 3px solid #EEEEEE;
   border-left: none;
   border-right: none;
-  border-collapse: true;
   cursor: default;
-`
-const LeftHeader = styled(Header)`
-  width: 80px;
   padding: 15px 25px 15px 25px;
   color: #f4511e;
 `
+const LeftHeader = styled(Header)`
+  width: 80px;
+`
 const RightHeader = styled(Header)`
   width: 800px;
-  padding: 15px 25px 15px 0px;
-  color: #f4511e;
+  padding-left: 0;
 `
 const TableRow = styled.tr`
   background-color: white;
@@ -56,14 +52,14 @@ const StyledLink = styled(Link)`
 
 function Homepage(props) {
   return (
-    <TableDiv>
+    <TableContainer>
       <Table>
         <TableRow>
           <LeftHeader>NAME</LeftHeader>
           <RightHeader>DESCRIPTION</RightHeader>
         </TableRow>
         {props.api.map(x =>
-          <StyledLink to={"/" + x.id}>
+          <StyledLink key={x.id} to={"/" + x.id}>
             <TableRow>
               <LeftCell>
                 {x.name}
@@ -75,7 +71,7 @@ function Homepage(props) {
           </StyledLink>
         )}
       </Table>
-    </TableDiv>
+    </TableContainer>
   )
 }
 

@@ -37,7 +37,7 @@ class Main extends Component<{}, { api: Array<any> }> {
             <Homepage api={this.state.api} />}
           />
           {this.state.api.map(x =>
-            <Route path={'/' + x.id} element={
+            <Route key={x.id} path={'/' + x.id} element={
               <BusinessPage info={x} nearbyPlaces={this.state.api.filter(y => (x.address.country === y.address.country) && (x !== y))} />}
             />
           )}

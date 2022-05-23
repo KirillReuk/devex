@@ -11,6 +11,8 @@ const InfoContainer = styled.div`
   margin: 15px 70px auto;
   display: flex;
   gap: 30px;
+  font-size: 10pt;
+  line-height: 22px;
 `
 const InfoItem = styled.div`
   background-color: white;
@@ -25,7 +27,6 @@ const InfoHeader = styled.div`
 const Table = styled.table`
   text-align: left;
   font-size: 14px;
-  
   table-layout: fixed;
   width: 100%;
   color: #666666;
@@ -57,7 +58,7 @@ function BusinessPage(props) {
           <InfoHeader>Nearby Places</InfoHeader>
           <Table>
             {props.nearbyPlaces.map(x =>
-              <tr>
+              <tr key={x.id}>
                 <TableCell>
                   {x.description}
                 </TableCell>
@@ -67,7 +68,9 @@ function BusinessPage(props) {
         </InfoItem>
         <InfoItem>
           <InfoHeader>Contact</InfoHeader>
-          {props.info.phone + ", " + props.info.email}
+          {props.info.phone}
+          <br />
+          {props.info.email}
         </InfoItem>
       </InfoContainer>
     </>
