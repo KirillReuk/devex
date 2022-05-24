@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const Header = styled.header`
   width: 100%;
-  background-color: white;
+  background-color: var(--color-header);
 `
 const TopBarContainer = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  height:88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 88px;
 `
 const Image = styled.img`
   width: 240px;

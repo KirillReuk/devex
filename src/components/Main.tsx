@@ -13,7 +13,7 @@ class Main extends Component<{}, { api: Array<any> }> {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchApi();
   }
 

@@ -15,7 +15,7 @@ const InfoContainer = styled.div`
   line-height: 22px;
 `
 const InfoItem = styled.div`
-  background-color: white;
+  background-color: var(--color-business-tile-background);
   padding: 30px 15px;
   min-width: 240px;
 `
@@ -29,9 +29,9 @@ const Table = styled.table`
   font-size: 14px;
   table-layout: fixed;
   width: 100%;
-  color: #67625c;
+  color: var(--color-business-table-text);
   td {
-    border: 3px solid white;
+    border: 3px solid var(--color-business-tile-background);
     border-left: none;
     border-right: none;
     border-collapse: collapse;
@@ -39,7 +39,7 @@ const Table = styled.table`
     overflow: hidden; 
     text-overflow: ellipsis;
     padding: 5px 30px 5px 10px;
-    background-color: #f8f8fa;  
+    background-color: var(--color-background);  
   }
 `
 function BusinessPage(props) {

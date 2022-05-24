@@ -10,16 +10,16 @@ const Table = styled.table`
   text-align: left;
   font-size: 14px;
   border-collapse: collapse;
-  background-color: white;
+  background-color: var(--color-homepage-table);
   th, td {
-    border: #f8f8fa 4px solid;
+    border: var(--color-background) 4px solid;
     border-left: none;
     border-right: none;
   }
   th {
     cursor: default;
     padding: 20px 25px;
-    color: #c14d28;
+    color: var(--color-primary-text);
     :first-of-type {
       width: 80px;
     }
@@ -33,7 +33,7 @@ const Table = styled.table`
     line-height: 20px;
     :first-of-type {
       width: 80px;
-      color: #c14d28;
+      color: var(--color-primary-text);
       font-weight: 600;
       vertical-align: middle;
     }
