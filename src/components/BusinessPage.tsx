@@ -8,7 +8,7 @@ const Image = styled.img`
   object-fit: cover;  
 `
 const InfoContainer = styled.div`
-  margin: 15px 70px auto;
+  margin: 15px 70px;
   display: flex;
   gap: 30px;
   font-size: 10pt;
@@ -29,20 +29,19 @@ const Table = styled.table`
   font-size: 14px;
   table-layout: fixed;
   width: 100%;
-  color: #666666;
+  color: #67625c;
+  td {
+    border: 3px solid white;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    padding: 5px 30px 5px 10px;
+    background-color: #f8f8fa;  
+  }
 `
-const TableCell = styled.td`
-  border: 3px solid white;
-  border-left: none;
-  border-right: none;
-  border-collapse: collapse;
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis;
-  padding: 5px 30px 5px 10px;
-  background-color: #EEEEEE;  
-`
-
 function BusinessPage(props) {
   return (
     <>
@@ -50,20 +49,22 @@ function BusinessPage(props) {
       <InfoContainer>
         <InfoItem>
           <InfoHeader>Address</InfoHeader>
-          {props.info.address.zip + " " + props.info.address.street}
+          {`${props.info.address.zip} ${props.info.address.street}`}
           <br />
-          {props.info.address.country + ", " + props.info.address.number}
+          {`${props.info.address.country}, ${props.info.address.number}`}
         </InfoItem>
         <InfoItem>
           <InfoHeader>Nearby Places</InfoHeader>
           <Table>
-            {props.nearbyPlaces.map(x =>
-              <tr key={x.id}>
-                <TableCell>
-                  {x.description}
-                </TableCell>
-              </tr>
-            )}
+            <tbody>
+              {props.nearbyPlaces.map(x =>
+                <tr key={x.id}>
+                  <td>
+                    {x.description}
+                  </td>
+                </tr>
+              )}
+            </tbody>
           </Table>
         </InfoItem>
         <InfoItem>
