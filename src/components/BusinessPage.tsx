@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ApiItem } from "./Main"
+import { Link } from 'react-router-dom';
 
 const Image = styled.img`
   width: 100%;
@@ -31,6 +32,7 @@ const Table = styled.table`
   table-layout: fixed;
   width: 100%;
   color: var(--color-business-table-text);
+  margin-top: -10px;
   td {
     border: 3px solid var(--color-business-tile-background);
     border-left: none;
@@ -43,6 +45,11 @@ const Table = styled.table`
     background-color: var(--color-background);  
   }
 `
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
 interface BusinessPageProps {
   info: ApiItem,
   nearbyPlaces: Array<ApiItem>
@@ -66,7 +73,9 @@ function BusinessPage(props: BusinessPageProps) {
               {props.nearbyPlaces.map(x =>
                 <tr key={x.id}>
                   <td>
-                    {x.description}
+                    <StyledLink to={`/${x.id}`}>
+                      {x.description}
+                    </StyledLink>
                   </td>
                 </tr>
               )}

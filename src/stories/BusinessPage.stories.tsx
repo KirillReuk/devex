@@ -1,4 +1,5 @@
 import BusinessPage from '../components/BusinessPage';
+import { BrowserRouter } from 'react-router-dom';
 
 export default {
   title: 'BusinessPage',
@@ -40,6 +41,9 @@ const commonProps = {
 };
 
 
-export const BusinessPageStory = () => <BusinessPage {...commonProps} />;
+export const BusinessPageStory = () =>
+  <BrowserRouter>
+    <BusinessPage {...commonProps} />;
+  </BrowserRouter>
 
 BusinessPageStory.storyName = "BusinessPage story";

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TopBar from './TopBar';
 import Homepage from './Homepage';

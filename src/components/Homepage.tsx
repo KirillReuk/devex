@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ApiItem } from "./Main";
@@ -68,12 +67,12 @@ function Homepage(props: HomepageProps) {
           {props.api.map(x =>
             <tr key={x.id}>
               <td>
-                <StyledLink to={"/" + x.id}>
+                <StyledLink to={`/${x.id}`}>
                   {x.name}
                 </StyledLink>
               </td>
               <td>
-                <StyledLink to={"/" + x.id}>
+                <StyledLink to={`/${x.id}`}>
                   {x.description}
                 </StyledLink>
               </td>
