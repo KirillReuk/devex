@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { ApiItem } from "./Main";
 
 const TableContainer = styled.div`
   margin: 45px auto auto;
@@ -49,7 +50,11 @@ const StyledLink = styled(Link)`
   color: inherit;
 `;
 
-function Homepage(props) {
+interface HomepageProps {
+  api: Array<ApiItem>
+}
+
+function Homepage(props: HomepageProps) {
   return (
     <TableContainer>
       <Table>

@@ -4,7 +4,23 @@ import TopBar from './TopBar';
 import Homepage from './Homepage';
 import BusinessPage from './BusinessPage';
 
-class Main extends Component<{}, { api: Array<any> }> {
+export interface ApiItem {
+  id: string,
+  name: string,
+  description: string,
+  phone: string,
+  image: string,
+  email: string,
+  address: {
+    number: string,
+    street: string,
+    zip: string,
+    city: string,
+    country: string
+  },
+}
+
+class Main extends Component<{}, { api: Array<ApiItem> }> {
   constructor(props) {
     super(props)
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ApiItem } from "./Main"
 
 const Image = styled.img`
   width: 100%;
@@ -42,7 +43,12 @@ const Table = styled.table`
     background-color: var(--color-background);  
   }
 `
-function BusinessPage(props) {
+interface BusinessPageProps {
+  info: ApiItem,
+  nearbyPlaces: Array<ApiItem>
+}
+
+function BusinessPage(props: BusinessPageProps) {
   return (
     <>
       <Image className='photo' src={props.info.image} />
