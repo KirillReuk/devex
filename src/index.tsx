@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Main from './components/Main';
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   html {
     --color-header: white;
     --color-background: #f8f8fa;
