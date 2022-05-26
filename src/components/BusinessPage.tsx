@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ApiItem } from "./Main"
 import { Link } from 'react-router-dom';
