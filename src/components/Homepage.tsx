@@ -4,7 +4,7 @@ import { ApiItem } from "./Main";
 
 const TableContainer = styled.div`
   margin: 45px auto auto;
-  width: 60%;
+  width: 50%;
 `
 const Table = styled.table`
   text-align: left;
